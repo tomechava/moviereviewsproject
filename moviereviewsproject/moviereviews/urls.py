@@ -16,10 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from movie import views as movieViews
+from movie import views as movieViews #import views from movie app
+
+from django.conf import settings #import settings from django
+from django.conf.urls.static import static #import static from django
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', movieViews.home),
     path('about/', movieViews.about),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #add this line to urlpatterns
