@@ -46,5 +46,18 @@
     </div>
     {% endfor %}
 </div>
+<form action="{% url 'signup' %}">
+    <div class="row my-5">
+        <div class="col-12">
+            <label for="txtEmail">Enter your Email:</label>
+            <input type="text" name="txtEmail" id="txtEmail" class="form-control">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+</form>
+
 
 {% endblock content %}
